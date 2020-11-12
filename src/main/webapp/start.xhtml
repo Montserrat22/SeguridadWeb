@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Inicio</title>
+        <h:outputStylesheet library="cascadeStyleSheet" name="bootstrap.min.css"></h:outputStylesheet>
+        <h:outputStylesheet library="cascadeStyleSheet" name="start.css"></h:outputStylesheet>
+        <h:outputScript library="js" name="startJs.js"></h:outputScript>
+    </h:head>
+    <h:body onload="onload()">
+        <div class="div-nav">
+            <div class="colums-div">
+                <div class="item-div">
+                    <div class="div-father">
+                        <div class="div-child">
+                            <a>E-commerce</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-div">
+                    <div class="div-father">
+                        <div class="div-child" style="text-align: right">
+                            <a href="#"><small></small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="perfil.xhtml"><small>#{applogin.username}</small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="start.xhtml"><small>Componentes</small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="#"><small>Productos</small></a>
+                        </div>
+                        <div class="div-child" style="border-left: 1px solid; padding-left: 10px;">
+                            <h:form>
+                                <h:commandButton value="Carrito" class="button-nav btn btn-outline-primary" action="#{appproducto.carrito()}">
+                                </h:commandButton>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1>BIENVENIDO</h1>
+        </div>
+        <div class="div-body">
+            <div class="colums-div">
+                <div class="item-div">
+                    <div class="div-father" style="width: 100%;">
+                        <div class="div-child" style="text-align: center;">
+                            <div class="div-table">
+                                <div class="table-cell item-head" >
+                                    <a>provedores</a>
+                                </div>
+                                <div class="table-cell item-provider">
+                                    <a>Procesamiento</a>
+                                </div>
+                                <div class="table-cell table-line table-option" onmouseover="useRam()">
+                                    <a>RAM</a>
+                                </div>
+                                <div class="table-cell table-option" onmouseover="useProcesador()">
+                                    <a>Procesadores</a>
+                                </div>
+                                <div class="table-cell item-provider">
+                                    <a>Almacenamiento</a>
+                                </div>
+                                <div class="table-cell table-line table-option" onmouseover="useDiscos()">
+                                    <a>Discos duros</a>
+                                </div>
+                                <div class="table-cell table-option" onmouseover="useDiscos()">
+                                    <a>mother boards</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-div" style="padding: 30px;">
+                    <div class="div-father" style="width: 100%;">
+                        <div class="div-child" style="text-align: center;">
+                                <h2 id="name-produc">#{appproducto.nombre}</h2>
+                            <div style="padding: 10px">
+                                <img id="img-prd" class="border-image" src="" width="200px"/>
+                            </div>
+                            <h:form id="formId">
+                                <h:inputHidden id="nombre" value="#{appproducto.nombre}" />
+                                <h:commandButton class="btn btn-outline-secondary" value="ver productos" onclick="getVars()" action="#{appproducto.submit}"></h:commandButton>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="div-fotter">
+            <div class="colums-div">
+                <div class="item-div" style="border-right: 1px solid;">
+                    <div class="div-father" style="width: 100%;">
+                        <div class="div-child" style="text-align: left">
+                            <h2>Instituto tecnologico de toluca <small>TICS</small></h2>
+                            <h3><small>contacto:</small></h3>
+                            <p><small>iitol@toluca.tecnm.mcx</small></p>
+                            <h3><small>numero:</small></h3>
+                            <p><small>7226450987</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-div">
+                    <div class="div-father" style="width: 100%;">
+                        <div class="div-child" style="text-align: center">
+                            <h2>¿Quienes somos?</h2>
+                            <p><small>un grupo muy bueno</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+

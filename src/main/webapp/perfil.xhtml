@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Perfil de usuario</title>
+        <h:outputStylesheet library="cascadeStyleSheet" name="bootstrap.min.css"></h:outputStylesheet>
+        <h:outputStylesheet library="cascadeStyleSheet" name="start.css"></h:outputStylesheet>
+        <h:outputScript library="js" name="register.js"></h:outputScript>
+    </h:head>
+    <h:body onload="#{appPerfil.llena(applogin.username)}">
+        <div class="div-nav">
+            <div class="colums-div">
+                <div class="item-div">
+                    <div class="div-father">
+                        <div class="div-child">
+                            <a>Perfil</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-div">
+                    <div class="div-father">
+                        <div class="div-child" style="text-align: right">
+                            <a href="#"><small></small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="perfil.xhtml"><small>#{applogin.username}</small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="start.xhtml"><small>Componentes</small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="#"><small>Productos</small></a>
+                        </div>
+                        <div class="div-child" style="border-left: 1px solid; padding-left: 10px;">
+                            <h:form>
+                                <h:commandButton value="Carrito" class="button-nav btn btn-outline-primary" action="#{appproducto.carrito()}">
+                                </h:commandButton>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="div-child">
+                 <small>#{applogin.username}</small>
+                <small>#{appPerfil.contrasenia}</small>
+                <small>#{appPerfil.telefono}</small>
+                <small>#{appPerfil.nombre}</small>
+                <small>#{appPerfil.id_rol}</small>
+                <small>#{appPerfil.id_direccion}</small>
+            </div>
+        </div>
+    </h:body>
+</html>
+

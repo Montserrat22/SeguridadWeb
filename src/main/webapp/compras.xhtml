@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <h:outputStylesheet library="cascadeStyleSheet" name="bootstrap.min.css"></h:outputStylesheet>
+        <h:outputStylesheet library="cascadeStyleSheet" name="start.css"></h:outputStylesheet>
+    </h:head>
+    <h:body>
+        <div class="div-nav">
+            <div class="colums-div">
+                <div class="item-div">
+                    <div class="div-father">
+                        <div class="div-child">
+                            <a>E-commerce</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-div">
+                    <div class="div-father">
+                        <div class="div-child" style="text-align: right">
+                            <a href="#"><small></small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="perfil.xhtml"><small>#{applogin.username}</small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="start.xhtml"><small>Componentes</small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="#"><small>Productos</small></a>
+                        </div>
+                        <div class="div-child" style="border-left: 1px solid; padding-left: 10px;">
+                            <h:form>
+                                <h:commandButton value="Carrito" class="button-nav btn btn-outline-primary" action="#{appproducto.carrito()}">
+                                </h:commandButton>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>componentes</h3>
+        <h:dataTable  style="width: 100%;" value="#{appcompras.lista}" var="producto"
+                      styleClass="table table-hover item-table">
+            <h:column>
+                <div class="div-father" style="width: 100%;">
+                    <div class="div-child">
+                          <img id="img-prd" src="jsf/ram_icon.png" width="42px"/>
+                    </div>
+                </div>
+            </h:column>
+            <h:column>
+                <div class="div-father" style="">
+                    <div class="div-child">
+                        <h5 id="empresa">#{producto.producto}</h5>
+                    </div>
+                </div>
+            </h:column>
+            <h:column>
+                <div class="div-father">
+                    <div class="div-child">
+                        <small id="nombre">#{producto.empresa}</small>
+                    </div>
+                </div>
+            </h:column>
+            <h:column>
+                <div class="div-father">
+                    <div class="div-child">
+                        <small id="precio">#{producto.nombre}</small>
+                    </div>
+                </div>
+            </h:column>
+            <h:column>
+                <div class="div-father">
+                    <div class="div-child">        
+                        <small id="precio">precio: #{producto.precio} $</small>        
+                    </div>
+                </div>
+            </h:column>
+            <h:column>
+                <div class="div-father">
+                    <div class="div-child">                            
+                        <h:form>
+                            <h:commandButton value="remover" action="#{appcompras.removeProduct(producto)}" class="btn btn-outline-danger"></h:commandButton>
+                        </h:form>    
+                    </div>
+                </div>
+            </h:column>
+        </h:dataTable>
+        <div class="colums-div">
+            <div class="item-div" style="text-align: right;" >
+                <h5>Total:</h5>  
+            </div>
+            <div class="item-div" style="text-align: left;">
+                <h5>#{appcompras.total}</h5>                      
+            </div>
+            <div class="item-div" >
+                      
+            </div>
+            <div class="item-div">
+            </div>
+        </div>
+        <h3>productos</h3>
+        <h:dataTable  style="width: 100%;" value="#{appcompras.lista}" var="producto"
+                      styleClass="table table-hover item-table">
+            <h:column>
+                <div class="div-father" style="width: 100%;">
+                    <div class="div-child">
+                      
+                    </div>
+                </div>
+            </h:column>
+            <h:column>
+                <div class="div-father" style="">
+                    <div class="div-child">
+                    </div>
+                </div>
+            </h:column>
+            <h:column>
+                <div class="div-father">
+                    <div class="div-child">
+                    </div>
+                </div>
+            </h:column>
+            <h:column>
+                <div class="div-father">
+                    <div class="div-child">
+                    </div>
+                </div>
+            </h:column>
+            <h:column>
+                <div class="div-father">
+                    <div class="div-child">               
+                    </div>
+                </div>
+            </h:column>
+            <h:column>
+                <div class="div-father">
+                    <div class="div-child">                            
+                  
+                    </div>
+                </div>
+            </h:column>
+        </h:dataTable>
+        <div class="colums-div" >
+            <div class="item-div" style="text-align: right;">
+                <h5>Total:</h5>     
+            </div>
+            <div class="item-div" style="text-align: left;">
+                  
+            </div>
+            <div class="item-div">
+                <h:form>
+                    <h:commandButton value="comprar" action="#{appcompras.confirmProducts()}"  class="btn #{appcompras.tag}"></h:commandButton>
+                </h:form>                        
+            </div>
+            <div class="item-div">
+            </div>
+        </div>
+    </h:body>
+</html>
+

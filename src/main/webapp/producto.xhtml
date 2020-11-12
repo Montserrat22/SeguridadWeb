@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="cascadeStyleSheet" name="start.css"></h:outputStylesheet>
+        <h:outputStylesheet library="cascadeStyleSheet" name="producto.css"></h:outputStylesheet>
+        <h:outputStylesheet library="cascadeStyleSheet" name="bootstrap.min.css"></h:outputStylesheet>
+        <h:outputScript library="js" name="pruductoJs.js"></h:outputScript>
+    </h:head>
+    <h:body onload="#{appproducto.onLoad()}" style="background-color: rgba(238, 243, 247);">
+        <div class="div-nav">
+            <div class="colums-div">
+                <div class="item-div">
+                    <div class="div-father">
+                        <div class="div-child">
+                            <a href="start.xhtml">regresar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-div">
+                    <div class="div-father">
+                        <div class="div-child" style="text-align: right">
+                            <a href="#"><small></small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="perfil.xhtml"><small>#{applogin.username}</small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="start.xhtml"><small>Componentes</small></a>
+                        </div>
+                        <div class="div-child">
+                            <a href="#"><small>Productos</small></a>
+                        </div>
+                        <div class="div-child" style="border-left: 1px solid; padding-left: 10px;">
+                            <h:form>
+                                <h:commandButton value="Carrito" class="button-nav btn btn-outline-primary" action="#{appproducto.carrito()}">
+                                </h:commandButton>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="colums-div">
+                <div class="item-porducto-div">
+                    <div class="div-father" style="width: 100%;">
+                        <div class="div-child" style="text-align: center;">
+                            <h3>#{appproducto.nombre}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-porducto-div">
+                    <div class="div-father" style="width: 100%;">
+                        <div class="div-child" style="text-align: center; width: 100%;">
+                            <h:dataTable  style="width: 100%;" value="#{appproducto.li}" var="producto"
+                                          styleClass="table table-hover item-table">
+                                <h:column>
+                                    <div class="div-father" style="width: 100%;">
+                                        <div class="div-child">
+                                            <img id="img-prd" src="jsf/ram_icon.png" width="42px"/>
+                                        </div>
+                                    </div>
+                                </h:column>
+                                <h:column>
+                                    <div class="div-father" style="">
+                                        <div class="div-child">
+                                            <h5 id="empresa">#{producto.empresa}</h5>
+                                        </div>
+                                    </div>
+                                </h:column>
+                                <h:column>
+                                    <div class="div-father">
+                                        <div class="div-child">
+                                            <small id="nombre">#{producto.nombre}</small>
+                                        </div>
+                                    </div>
+                                </h:column>
+                                <h:column>
+                                    <div class="div-father">
+                                        <div class="div-child">
+                                            <small id="precio">precio: $ #{producto.precio} </small>
+                                        </div>
+                                    </div>
+                                </h:column>
+                                <h:column>
+                                    <div class="div-father">
+                                        <div class="div-child">        
+                                            <h:form>
+                                                <h:commandButton value="agregar" action="#{appcompras.addProduct(producto)}" class="btn btn-outline-success"></h:commandButton>
+                                            </h:form>                                          
+                                        </div>
+                                    </div>
+                                </h:column>
+                                <h:column>
+                                    <div class="div-father">
+                                        <div class="div-child">                            
+                                            <button onclick="" class="btn btn-outline-primary">ver mas..</button>
+                                        </div>
+                                    </div>
+                                </h:column>
+                            </h:dataTable>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </h:body>
+</html>
+
